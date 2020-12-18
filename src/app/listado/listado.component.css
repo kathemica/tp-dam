@@ -1,0 +1,23 @@
+.flex-container{
+  display: grid;
+  grid-template-rows: inherit;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 20px;
+
+  width: 98%;
+  background: rgba(255, 255, 255, 0);
+  margin: 5px 5px 5px 5px;
+  padding: 1px 1px 1px 1px;
+}
+
+@media only screen and (min-width: 642px) {
+  .flex-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 966px) {
+  .flex-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

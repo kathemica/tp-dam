@@ -1,0 +1,182 @@
+/*---------------------------------*/
+/*DEVICE CARD*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.3fr 1.5fr 1.4fr 0.4fr;
+  grid-template-rows: 0.8fr 1.2fr;
+  gap: 0px 0px;
+  width: 300px !important;
+  padding: 0;
+  flex: 1;
+  border-radius:  5px 5px 30px 5px;
+  background-color: ghostwhite;
+  grid-template-areas: "icon-area name-area name-area more-area" "icon-area map-area map-area more-area";
+  margin-right: 4rem;
+
+  box-shadow:
+    6px 6px 8px 0 rgba(0, 0, 0, 0.25),
+    -4px -4px 6px 0 rgba(255, 255, 255, 0.3);
+}
+
+.grid-container:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.icon-area {
+  grid-area: icon-area;
+
+  color: rgba(255, 255, 255, 0.54);
+  background-color: #0dc4c4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius:  5px 10px 10px 5px;
+  top: -2px;
+}
+
+.name-area {
+  grid-area: name-area;
+  grid-template-areas: ". . ." ". . .";
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Montserrat", serif;
+  font-size: 20px;
+  color: #000000;
+  font-weight: bold;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.map-area {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "map-icon-area map-name-area map-name-area" "map-icon-area map-name-area map-name-area";
+  grid-area: map-area;
+}
+
+.map-icon-area {
+  grid-area: map-icon-area;;
+
+  color: rgba(5, 71, 128, 0.97);
+  height: 40px;
+  align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.map-name-area {
+  grid-area: map-name-area;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-family: "Montserrat", serif;
+  font-size: 15px;
+  color: #000000;
+}
+
+.more-area {
+  grid-area: more-area;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.9fr 1.1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "status-valve-area status-valve-area status-valve-area" "next-icon-area next-icon-area next-icon-area" "next-icon-area next-icon-area next-icon-area";
+}
+
+.status-valve-area {
+  grid-area: status-valve-area;
+}
+
+.next-icon-area {
+  grid-area: next-icon-area;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  color: rgba(202, 202, 202, 0.97);
+}
+
+.next-icon-area:hover {
+  color: rgba(224, 224, 224, 0.97);
+  background-color: #0287a0;
+  border-radius:  5px 5px 30px 5px;
+  box-shadow: 0 2px 5px rgba(0.1, 0, 0, 0);
+}
+
+/*---------------------------------*/
+/*DATA TOOLTIP*/
+
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+}
+[data-tooltip]:before,
+[data-tooltip]:after {
+  line-height: 1;
+  font-size: .9em;
+  pointer-events: none;
+  position: absolute;
+  box-sizing: border-box;
+  display: none;
+  opacity: 0;
+}
+[data-tooltip]:before {
+  content: "";
+  border: 5px solid transparent;
+  z-index: 100;
+}
+[data-tooltip]:after {
+  content: attr(data-tooltip);
+  text-align: center;
+  min-width: 3em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background: rgb(255, 150, 69);
+  color: #FFFFFF;
+  z-index: 99;
+}
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  display: block;
+  opacity: 1;
+}
+[data-tooltip][data-flow="left"]::before {
+  top: 50%;
+  border-right-width: 0;
+  border-left-color: rgb(255, 150, 69);
+  left: calc(0em - 5px);
+  -webkit-transform: translate(-8px, -50%);
+  transform: translate(-8px, -50%);
+}
+[data-tooltip][data-flow="left"]::after {
+  top: 50%;
+  right: calc(100% + 5px);
+  -webkit-transform: translate(-8px, -50%);
+  transform: translate(-8px, -50%);
+}
