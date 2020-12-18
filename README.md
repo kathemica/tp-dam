@@ -1,2 +1,2 @@
 # tp-dam
-TP para la asignatura Desarrollo de Aplicaciones Multuplataforma
+TP para la asignatura Desarrollo de Aplicaciones Multiplataforma
