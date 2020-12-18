@@ -1,0 +1,33 @@
+<div class="grid-container" id="{{elemento.id}}">
+  <div class="icon-area">
+    <mat-icon svgIcon="weatherIcon" class="mat-list-icon"></mat-icon>
+  </div>
+  <div class="name-area">&nbsp;{{elemento.nombre | capitalizarCadena}}</div>
+  <div class="map-area">
+    <div class="map-icon-area">
+      <mat-icon svgIcon="mapMarker"></mat-icon>
+    </div>
+    <div class="map-name-area">{{elemento.ubicacion | capitalizarCadena}}</div>
+  </div>
+  <div class="more-area">
+    <div class="status-valve-area">
+      <div *ngIf="elemento.valveStatus">
+        <span data-tooltip="Válvula Abierta" data-flow="left">
+          <mat-icon svgIcon="valveOpen" class="mat-list-icon" style="color: greenyellow"></mat-icon>
+        </span>
+      </div>
+      <div *ngIf="!elemento.valveStatus" title="Válvula cerrada">
+        <span data-tooltip="Válvula Cerrada" data-flow="left">
+          <mat-icon svgIcon="valveClosed" class="mat-list-icon" style="color: red"></mat-icon>
+        </span>
+      </div>
+    </div>
+    <div class="next-icon-area">
+      <a routerLink="detalle">
+        <mat-icon svgIcon="rightArrow" class="mat-list-icon"></mat-icon>
+      </a>
+    </div>
+  </div>
+</div>
+
+

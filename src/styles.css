@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+  font-family: "digital-7";
+  src: url("./assets/fonts/digital-7/digital-7.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/montserrat/MontserratAlternates-Light.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/montserrat/MontserratAlternates-Regular.ttf") format("opentype");
+}
+
